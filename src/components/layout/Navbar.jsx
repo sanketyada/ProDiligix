@@ -81,6 +81,32 @@ const Navbar = () => {
               >
                 About Us
               </Link>
+                  <path d="M6 8L10 12L14 8" stroke="#fff" strokeWidth="2" />
+                </svg>
+              </button>
+              {servicesOpen && (
+                <div className="absolute left-0 mt-1 w-56 bg-white/95 backdrop-blur-md border border-blue-100 shadow-xl rounded-2xl z-20 overflow-hidden animate-fadeIn">
+                  {[
+                    {
+                      path: "/LogisticsManagement",
+                      label: "Logistics Management",
+                    },
+                    { path: "/CorporateGifting", label: "Corporate Gifting" },
+                    { path: "/Eventmanagement", label: "Event Management" },
+                    { path: "/ITsolutions", label: "IT Solutions" },
+                    { path: "/StampPepper", label: "Stamp Paper" },
+                    { path: "/TeamBuilding", label: "Team Building" },
+                  ].map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="px-5 py-2.5 block  text-[#2D5DD5] font-medium hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 flex items-center gap-2"
+                    >
+                      <span>{item.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
