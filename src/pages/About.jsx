@@ -11,6 +11,7 @@ import {
   TrendingUp,
   ChevronDown,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import map from "../components/assets/images/India.png";
 const brand = {
   from: "#4789EA",
@@ -103,12 +104,13 @@ export default function About() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mt-8"
           >
-            <a
-              href="/contact"
+
+            <Link
+              to="/contact"
               className="inline-flex items-center rounded-xl px-5 py-3 font-semibold bg-[#2D5DD5] text-white hover:bg-[#253F83] transition-colors shadow"
             >
               Book Meeting
-            </a>
+            </Link>
           </motion.div>
         </div>
         <div>
@@ -287,12 +289,18 @@ export default function About() {
                   Book a meeting and we’ll tailor ProDiligix to your needs.
                 </p>
               </div>
-              <a
+              {/* <a
                 href="/contact"
                 className="inline-flex items-center rounded-xl px-5 py-3 font-semibold bg-white text-[#2D5DD5] hover:bg-blue-100 hover:text-[#253F83] transition-colors shadow"
               >
                 Book Meeting
-              </a>
+              </a> */}
+              <Link
+                to="/contact"
+                className="inline-flex items-center rounded-xl px-5 py-3 font-semibold bg-white text-[#2D5DD5] hover:bg-blue-100 hover:text-[#253F83] transition-colors shadow"
+              >
+                Book Meeting
+              </Link>
             </div>
           </div>
         </div>
