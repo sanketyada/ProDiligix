@@ -10,8 +10,8 @@ import {
   Clock4,
   CheckCircle2,
 } from "lucide-react";
-import ContactSection from "../../components/sections/ContactSection";
-
+import ContactSection from "../components/sections/ContactSection";
+import eventImg from "../components/assets/images/event.jpg";
 const EventManagement = () => {
   const sections = [
     {
@@ -48,14 +48,14 @@ const EventManagement = () => {
       {/* Hero Image */}
       <div className="w-full">
         <img
-          src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1600&q=80"
+          src={eventImg}
           alt="Event Management"
           className="w-full h-64 md:h-96 object-cover"
         />
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-6 py-2">
         <h1 className="text-3xl md:text-4xl font-bold text-[#2D5DD5] mb-6 text-center">
           Event Management
         </h1>
@@ -97,9 +97,6 @@ const EventManagement = () => {
             Whether it’s a corporate conference, award ceremony, or product launch —
             we’ll make it impactful, organized, and unforgettable.
           </p>
-          <button className="bg-[#2D5DD5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#234bb5] transition">
-            Get in Touch
-          </button>
         </div>
       </div>
        <ContactSection/>

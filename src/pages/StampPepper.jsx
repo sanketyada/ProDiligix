@@ -4,8 +4,8 @@ import {
   CheckCircle,
   Scale,
 } from "lucide-react";
-import ContactSection from "../../components/sections/ContactSection";
-
+import ContactSection from "../components/sections/ContactSection";
+import stampImg from "../components/assets/images/stamp.jpg";
 const StampPaperProcurement = () => {
   const services = [
     {
@@ -46,7 +46,7 @@ const StampPaperProcurement = () => {
     <div className="w-full">
       {/* Header Image */}
       <img
-        src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f"
+        src={stampImg}
         alt="Stamp Paper Procurement"
         className="w-full h-72 object-cover"
       />

@@ -5,7 +5,7 @@ import {
   BrainCircuit,
   Headphones,
 } from "lucide-react";
-import ContactSection from "../../components/sections/ContactSection";
+import ContactSection from "../components/sections/ContactSection";
 
 const ITSolutions = () => {
   const solutions = [

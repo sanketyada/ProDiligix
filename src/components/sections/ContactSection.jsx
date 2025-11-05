@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Clock, Zap } from "lucide-react";
-import whatsappImage from "../assets/images/India.png";
 
 const countries = [
   { code: "+91", emoji: "🇮🇳", name: "India" },
@@ -62,10 +61,12 @@ export default function ContactSection() {
         {/* Left Section */}
         <div className="text-center lg:text-left space-y-6">
           <h1 className="text-2xl md:text-3xl font-bold text-white">
-            Powering the Global Supply Chain
+            ProDiligix – The Ultimate Platform for Indirect Procuremen
           </h1>
           <p className="text-white text-base md:text-lg">
-            Partnering with you from Sourcing to Delivery
+            Enhancing business efficiency with innovative, seamless, and
+            cost-optimized solutions Partnering with you from
+            Sourcing to Delivery
           </p>
 
           <div className="grid grid-cols-2 gap-4">
@@ -81,9 +82,6 @@ export default function ContactSection() {
                 <p className="text-sm text-slate-600">Turn Around</p>
               </div>
             </div>
-
-
-
 
             {/* Card 4 */}
             <div className="bg-purple-50 rounded-2xl p-6 text-center space-y-3">
@@ -101,8 +99,8 @@ export default function ContactSection() {
 
           <p className="text-white text-sm max-w-md mx-auto lg:mx-0">
             By submitting this form, you agree that ProDiligix may contact you
-            with marketing-related communications regarding products, services,
-            and updates.
+            regarding our products, services, events, and other
+            information you request.
           </p>
         </div>
 

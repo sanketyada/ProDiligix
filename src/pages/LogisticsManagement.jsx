@@ -8,6 +8,8 @@ import {
   MonitorCheck,
 } from "lucide-react";
 
+import logoImg from "../components/assets/images/logo.jpg";
+
 const LogisticsManagement = () => {
   const services = [
     {
@@ -75,7 +77,7 @@ const LogisticsManagement = () => {
       {/* Top Image */}
       <div className="w-full">
         <img
-          src="https://images.unsplash.com/photo-1505839673365-e3971f8d9184?auto=format&fit=crop&w=1600&q=80"
+          src={logoImg}
           alt="Logistics Management"
           className="w-full h-64 md:h-96 object-cover"
         />

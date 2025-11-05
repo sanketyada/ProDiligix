@@ -11,7 +11,7 @@ import {
   TrendingUp,
   ChevronDown,
 } from "lucide-react";
-
+import map from "../components/assets/images/India.png";
 const brand = {
   from: "#4789EA",
   via: "#2D5DD5",
@@ -72,18 +72,17 @@ export default function About() {
       `}</style>
 
       {/* HERO — now white background */}
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-white flex flex-wrap">
         <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
           <motion.h1
-  initial={{ opacity: 0, y: 12 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6 }}
-  className="text-4xl md:text-5xl font-bold leading-tight text-black"
->
-  About <span className="text-[#2D5DD5]">ProDiligix</span>
-</motion.h1>
-
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold leading-tight text-black"
+          >
+            About <span className="text-[#2D5DD5]">ProDiligix</span>
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -92,8 +91,9 @@ export default function About() {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="mt-4 md:text-lg text-gray-600 max-w-3xl"
           >
-            India’s one-stop indirect procurement and logistics platform—bringing
-            clarity, control, and efficiency to business operations.
+            India’s one-stop indirect procurement and logistics
+            platform—bringing clarity, control, and efficiency to business
+            operations.
           </motion.p>
 
           <motion.div
@@ -111,6 +111,9 @@ export default function About() {
             </a>
           </motion.div>
         </div>
+        <div>
+          <img src={map} alt="" />
+        </div>
       </section>
 
       {/* COMPANY OVERVIEW — removed negative margin; clean spacing on white */}
@@ -124,12 +127,12 @@ export default function About() {
               ProDiligix is India’s one-stop indirect procurement and logistics
               platform, bringing clarity, control, and efficiency to business
               operations. We power the global supply chain through a B2B
-              centralized platform that supports industries like IT, Manufacturing,
-              and eCommerce — covering everything from sourcing to delivery. With
-              SLA-backed services, verified vendors, and real-time tracking,
-              ProDiligix helps businesses reduce costs, simplify operations, and
-              eliminate vendor chaos — enabling them to focus on growth, not
-              coordination.
+              centralized platform that supports industries like IT,
+              Manufacturing, and eCommerce — covering everything from sourcing
+              to delivery. With SLA-backed services, verified vendors, and
+              real-time tracking, ProDiligix helps businesses reduce costs,
+              simplify operations, and eliminate vendor chaos — enabling them to
+              focus on growth, not coordination.
             </p>
           </div>
         </div>
@@ -150,9 +153,9 @@ export default function About() {
               <div className="flex items-start gap-4">
                 <div
                   className="shrink-0 rounded-xl px-3 py-2 text-white text-sm font-bold"
-style={{
-  background: `linear-gradient(90deg, ${brand.from} 0%, ${brand.via} 70%, ${brand.to} 100%)`,
-}}
+                  style={{
+                    background: `linear-gradient(90deg, ${brand.from} 0%, ${brand.via} 70%, ${brand.to} 100%)`,
+                  }}
                 >
                   01
                 </div>
@@ -161,11 +164,12 @@ style={{
                     Centralized, Technology-Driven Procurement
                   </h3>
                   <p className="mt-2 text-gray-700 leading-7">
-                    ProDiligix simplifies indirect procurement through a centralized,
-                    technology-driven platform—enabling businesses to manage
-                    logistics, gifting, events, IT solutions, and more, all from a
-                    single unified dashboard. Our smart sourcing engine connects you
-                    with verified vendors to ensure the best quality, cost, and speed.
+                    ProDiligix simplifies indirect procurement through a
+                    centralized, technology-driven platform—enabling businesses
+                    to manage logistics, gifting, events, IT solutions, and
+                    more, all from a single unified dashboard. Our smart
+                    sourcing engine connects you with verified vendors to ensure
+                    the best quality, cost, and speed.
                   </p>
                 </div>
               </div>
@@ -193,11 +197,12 @@ style={{
                     From PO to Delivery with Full Visibility
                   </h3>
                   <p className="mt-2 text-gray-700 leading-7">
-                    Once approved, ProDiligix manages everything from purchase order
-                    to delivery with real-time tracking, SLA-backed performance, and
-                    automated documentation. The platform ensures complete
-                    transparency, faster turnaround, and measurable savings—making
-                    procurement effortless and truly centralized.
+                    Once approved, ProDiligix manages everything from purchase
+                    order to delivery with real-time tracking, SLA-backed
+                    performance, and automated documentation. The platform
+                    ensures complete transparency, faster turnaround, and
+                    measurable savings—making procurement effortless and truly
+                    centralized.
                   </p>
                 </div>
               </div>

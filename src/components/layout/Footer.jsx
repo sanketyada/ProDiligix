@@ -69,22 +69,9 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-3">
+ 
             <a
-              href="#"
-              className="w-9 h-9 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-5 h-5 text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-9 h-9 rounded-full bg-sky-400 hover:bg-sky-500 flex items-center justify-center transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5 text-white" />
-            </a>
-            <a
-              href="#"
+              href="https://www.linkedin.com/company/prodiligix-technologies-pvt-ltd/?originalSubdomain=in"
               className="w-9 h-9 rounded-full bg-blue-700 hover:bg-blue-800 flex items-center justify-center transition-colors"
               aria-label="LinkedIn"
             >

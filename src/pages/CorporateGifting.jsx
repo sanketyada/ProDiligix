@@ -10,8 +10,8 @@ import {
   Layers,
   ClipboardCheck,
 } from "lucide-react";
-import ContactSection from "../../components/sections/ContactSection";
-
+import ContactSection from "../components/sections/ContactSection";
+import giftImg from "../components/assets/images/gift.png";
 const CorporateGifting = () => {
   const offerings = [
     {
@@ -69,7 +69,7 @@ const CorporateGifting = () => {
       {/* Hero Image */}
       <div className="w-full">
         <img
-          src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1600&q=80"
+          src={giftImg}
           alt="Corporate Gifting"
           className="w-full h-64 md:h-96 object-cover"
         />

@@ -116,7 +116,7 @@ const GetStartedForm = () => {
               <select
                 name="countryCode"
                 required
-                className="gs-phone-country"
+                className="gs-phone-country "
                 value={formData.countryCode}
                 onChange={handleChange}
               >
@@ -129,6 +129,7 @@ const GetStartedForm = () => {
                   </option>
                 ))}
               </select>
+              
 
               <input
                 type="tel"

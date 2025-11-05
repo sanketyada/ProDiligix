@@ -10,8 +10,8 @@ import {
   Network,
   Presentation,
 } from "lucide-react";
-import ContactSection from "../../components/sections/ContactSection";
-
+import ContactSection from "../components/sections/ContactSection";
+import teamImg from "../components/assets/images/team.jpg";
 const TeamBuilding = () => {
   const activities = [
     {
@@ -48,7 +48,7 @@ const TeamBuilding = () => {
       {/* Hero Image */}
       <div className="w-full">
         <img
-          src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80"
+          src={teamImg}
           alt="Team Building Activities"
           className="w-full h-64 md:h-96 object-cover"
         />
@@ -97,9 +97,6 @@ const TeamBuilding = () => {
             From adventure retreats to creative workshops — we help your teams connect, grow, and
             perform better together.
           </p>
-          <button className="bg-[#2D5DD5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#234bb5] transition">
-            Get Started
-          </button>
         </div>
       </div>
        <ContactSection/>

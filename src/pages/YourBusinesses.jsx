@@ -36,7 +36,7 @@ export default function YourBusinesses() {
   // Our Expertise tiles
   const expertise = [
     { title: "Shipping and\nreceiving",  bg: "#6D63F3", icon: <PackageCheck className="w-9 h-9 text-white" /> },
-    { title: "FTL and LTL\nfreight shipping", bg: "#B36A53", icon: <Truck className="w-9 h-9 text-white" /> },
+    { title: "FTL and PTL\nfreight shipping", bg: "#B36A53", icon: <Truck className="w-9 h-9 text-white" /> },
     { title: "Reverse\nlogistics",      bg: "#EB5F5E", icon: <Undo2 className="w-9 h-9 text-white" /> },
     { title: "Train & Air\nServices",     bg: "#0EA5E9", icon: (
         <div className="relative"><TrainFront className="w-8 h-8 text-white" /><Plane className="w-4 h-4 text-white absolute -right-2 -top-1 opacity-90" /></div>
