@@ -16,7 +16,7 @@ export default function contact() {
               </h2>
               <p className="text-slate-600 text-lg">
                 Grow your business{" "}
-                <span className="text-red-500 font-semibold">5x faster</span>{" "}
+                <span className="text-blue-500 font-semibold">5x faster</span>{" "}
                 with us
               </p>
             </div>
@@ -31,7 +31,7 @@ export default function contact() {
                 <div>
                   <h4 className="font-semibold text-lg">Contact us now</h4>
                   <p className="text-slate-600 text-sm">
-                    +91 89040 55757 / 3737
+                    +91 89405 5757/3737
                   </p>
                 </div>
               </div>
@@ -78,12 +78,17 @@ export default function contact() {
                     Bengaluru, Karnataka 560008
                   </p>
 
-                  <h4 className="font-semibold text-lg mt-4 mb-1">
-                    Branch Office
-                  </h4>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="bg-emerald-100 p-3 rounded-xl">
+                  <MapPin className="w-6 h-6 text-emerald-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">Branch Office</h4>
                   <p className="text-slate-600 text-sm">
                     2nd Floor, #108, 27th Main Road, Sector 2, HSR Layout,
-                    Opposite Corner House / KLM Mall - HSR
+                    Opposite Corner House / KLM Mall - HSR 560008
                   </p>
                 </div>
               </div>

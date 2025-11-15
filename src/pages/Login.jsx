@@ -1,33 +1,50 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Truck, Package, Globe, ShoppingCart, UserCheck } from 'lucide-react';
-
+import { Eye, EyeOff } from 'lucide-react';
+import {
+  LayoutGrid,
+  ShieldCheck,
+  Radar,
+  PiggyBank,
+  MapPin,
+  LineChart,
+  Handshake,
+} from "lucide-react";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const features = [
-    {
-      icon: <Truck className="w-5 h-5" />,
-      text: "Ship to 99.5% of India's population"
-    },
-    {
-      icon: <Package className="w-5 h-5" />,
-      text: "Assured COD remittance in 2 days at zero extra charges"
-    },
-    {
-      icon: <Globe className="w-5 h-5" />,
-      text: "Ship Internationally to 220+ countries"
-    },
-    {
-      icon: <ShoppingCart className="w-5 h-5" />,
-      text: "Integrate with sales channels in one click"
-    },
-    {
-      icon: <UserCheck className="w-5 h-5" />,
-      text: "Reduce order returns by 40% with RTO predictor & address validation"
-    }
-  ];
+const features = [
+  {
+    icon: <LayoutGrid className="w-5 h-5" />,
+    text: "Centralized Platform – Manage logistics, gifting, events, and IT solutions — all from one dashboard."
+  },
+  {
+    icon: <ShieldCheck className="w-5 h-5" />,
+    text: "SLA-Backed Services – Every service backed by SLAs, ensuring reliability and peace of mind."
+  },
+  {
+    icon: <Radar className="w-5 h-5" />,
+    text: "Real-Time Tracking – Track your requests, deliveries, and invoices — all in real time."
+  },
+  {
+    icon: <PiggyBank className="w-5 h-5" />,
+    text: "Cost Efficiency – Save up to 10–15% with optimized procurement and transparent pricing."
+  },
+  {
+    icon: <MapPin className="w-5 h-5" />,
+    text: "Nationwide Coverage – Delivering reliability across 25+ states and 200+ cities."
+  },
+  {
+    icon: <LineChart className="w-5 h-5" />,
+    text: "Automation & Analytics – Smart dashboards that give insights, not just data."
+  },
+  {
+    icon: <Handshake className="w-5 h-5" />,
+    text: "Trusted by Leading Brands & Businesses"
+  }
+];
+
 
   const handleLogin = () => {
     console.log('Login clicked', { email, password });
@@ -83,7 +100,7 @@ export default function Login() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="support@prodiigix.com"
+                  placeholder="Enter Registerd email id"
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800 focus:border-transparent text-slate-700"
                 />
               </div>
@@ -97,7 +114,7 @@ export default function Login() {
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="••••••••••"
+                    placeholder="Enter Password"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800 focus:border-transparent text-slate-700 pr-12"
                   />
                   <button

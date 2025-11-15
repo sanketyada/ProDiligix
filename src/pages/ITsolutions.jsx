@@ -6,6 +6,7 @@ import {
   Headphones,
 } from "lucide-react";
 import ContactSection from "../components/sections/ContactSection";
+import IT from "../components/assets/images/It.png";
 
 const ITSolutions = () => {
   const solutions = [
@@ -55,7 +56,7 @@ const ITSolutions = () => {
     <div className="w-full">
       {/* Header Image */}
       <img
-        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        src={IT}
         alt="IT Solutions"
         className="w-full h-72 object-cover"
       />

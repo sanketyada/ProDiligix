@@ -73,7 +73,7 @@ export default function About() {
       `}</style>
 
       {/* HERO — now white background */}
-      <section className="relative overflow-hidden bg-white flex flex-wrap">
+      <section className="relative overflow-hidden bg-white ">
         <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
@@ -114,7 +114,7 @@ export default function About() {
           </motion.div>
         </div>
         <div>
-          <img src={map} alt="" />
+          <img src={map} alt="" className="mx-auto" />
         </div>
       </section>
 

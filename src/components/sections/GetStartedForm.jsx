@@ -67,7 +67,7 @@ const GetStartedForm = () => {
               type="text"
               name="companyName"
               className="gs-input"
-              placeholder="Company Name"
+              placeholder="Company Name*"
               value={formData.companyName}
               onChange={handleChange}
               required
@@ -81,7 +81,7 @@ const GetStartedForm = () => {
               onChange={handleChange}
             >
               <option value="" disabled hidden>
-                Select Industry
+                Select Industry*
               </option>
               <option value="automotive">Automotive</option>
               <option value="pharma">Pharma</option>
@@ -95,7 +95,7 @@ const GetStartedForm = () => {
               type="text"
               name="fullName"
               className="gs-input"
-              placeholder="Your Name"
+              placeholder="Your Name*"
               value={formData.fullName}
               onChange={handleChange}
               required
@@ -104,7 +104,7 @@ const GetStartedForm = () => {
               type="email"
               name="email"
               className="gs-input"
-              placeholder="Work Email"
+              placeholder="Work Email*"
               value={formData.email}
               onChange={handleChange}
               required

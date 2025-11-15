@@ -6,7 +6,7 @@ import {
   FolderUp, PanelsTopLeft, ThumbsUp, Gauge
 } from "lucide-react";
 import ContactSection from "../components/sections/ContactSection";
-
+import { Link } from "react-router-dom";
 const BRAND = "#246bed";
 
 export default function YourBusinesses() {
@@ -53,7 +53,7 @@ export default function YourBusinesses() {
     { title: "Choose Suppliers & get\nmultiple quotations", color: "#F59E0B", icon: <PanelsTopLeft className="w-8 h-8" /> },
     { title: "Receive samples & share your\napproval / feedback", color: "#EAB308", icon: <ThumbsUp className="w-8 h-8" /> },
     { title: "Raise PO & start tracking\norders on the dashboard", color: "#10B981", icon: <Gauge className="w-8 h-8" /> },
-    { title: "Delivery", color: "#0EA5E9", icon: <Truck className="w-8 h-8" /> },
+    { title: "Completed/Delivered", color: "#0EA5E9", icon: <Truck className="w-8 h-8" /> },
   ];
 
   const heroImg = "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/a35eb6b9-f638-4c19-b8d9-0d5c54558c5c.png";
@@ -158,9 +158,12 @@ export default function YourBusinesses() {
 
                   <p className="mt-4 text-slate-800 leading-7">{it.body}</p>
 
-                  <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-4 py-2 text-sm hover:bg-slate-800 transition">
+                  <Link
+                  to="/contact"
+                   className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-4 py-2 text-sm hover:bg-slate-800 transition">
                     Get started <ChevronRight className="w-4 h-4" />
-                  </button>
+                  </Link>
+                  
                 </div>
               </section>
             );

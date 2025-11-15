@@ -67,7 +67,7 @@ const Navbar = () => {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="px-5 py-2.5 block text-[#2D5DD5] font-medium hover:bg-blue-50 hover:text-blue-700 transition-all"
+                        className="px-5 py-2.5 block text-[#2D5DD5] font-medium hover:bg-blue-200 hover:text-blue-700 transition-all"
                       >
                         {item.label}
                       </Link>

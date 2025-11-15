@@ -29,7 +29,7 @@ export default function Footer() {
       title: "About Us",
       links: [
         { name: "Company", path: "/about" },
-        { name: "Contact US", path: "/contactUs" },
+        { name: "Contact Us", path: "/contactUs" },
       ],
     },
   ];
