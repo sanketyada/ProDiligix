@@ -11,7 +11,7 @@ export default function Footer() {
         { name: "Corporate Gifting", path: "/CorporateGifting" },
         { name: "Eventmanagement", path: "/Eventmanagement" },
         { name: "IT solutions", path: "/ITsolutions" },
-        { name: "Stamp Pepper", path: "/StampPepper" },
+        { name: "Stamp Paper", path: "/StampPepper" },
         { name: "Team Building", path: "/TeamBuilding" },
       ],
     },

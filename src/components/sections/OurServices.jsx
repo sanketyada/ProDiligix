@@ -9,7 +9,7 @@ import giftImg from "../assets/images/gift.png";
 import eventImg from "../assets/images/event.jpg";
 import teamImg from "../assets/images/team.jpg";
 import stampImg from "../assets/images/stamp.jpg";
-
+import IT from "../assets/images/It.png"
 const services = [
   {
     title: "Logistics Management",
@@ -43,8 +43,7 @@ const services = [
     title: "IT Solutions",
     description:
       "Empowering your business with automation, digital tools, and cloud-based solutions for the modern era.",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60",
+    image:IT,
     path: "/ITsolutions",
   },
   {
