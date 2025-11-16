@@ -78,7 +78,7 @@ export default function Footer() {
               <Linkedin className="w-5 h-5 text-white" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/prodiligix_technologies/"
               className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 flex items-center justify-center transition-all"
               aria-label="Instagram"
             >
