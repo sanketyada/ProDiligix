@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import {
   Cpu, Factory, ShoppingBag, Package, Handshake, ChevronRight,
   Truck, PackageCheck, Undo2, TrainFront, Plane, Gift, CalendarCheck, Users, Laptop,
-  // How it works icons (distinct from Expertise)
-  FolderUp, PanelsTopLeft, ThumbsUp, Gauge
+  FolderUp, PanelsTopLeft, ThumbsUp, Gauge, ChevronDown
 } from "lucide-react";
 import ContactSection from "../components/sections/ContactSection";
 import { Link } from "react-router-dom";
+
+import workflowImg from "../components/assets/images/workflow.png"; // verify path
+
 const BRAND = "#246bed";
 
 export default function YourBusinesses() {
@@ -33,7 +35,6 @@ export default function YourBusinesses() {
       body: "Centralize indirect procurement for logistics, gifting, events, and IT solutions. Manage multiple vendors, track operations in real time, and ensure SLA-backed performance—reducing costs, improving efficiency, and letting teams focus on exceptional service instead of coordination." },
   ];
 
-  // Our Expertise tiles
   const expertise = [
     { title: "Shipping and\nreceiving",  bg: "#6D63F3", icon: <PackageCheck className="w-9 h-9 text-white" /> },
     { title: "FTL and PTL\nfreight shipping", bg: "#B36A53", icon: <Truck className="w-9 h-9 text-white" /> },
@@ -47,13 +48,12 @@ export default function YourBusinesses() {
     { title: "IT Solutions",     bg: "#2563EB", icon: <Laptop className="w-9 h-9 text-white" /> },
   ];
 
-  // How it works — 5 steps, equal size
   const howItWorks = [
-    { title: "Send your\nrequirement", color: "#EF4444", icon: <FolderUp className="w-8 h-8" /> },
-    { title: "Choose Suppliers & get\nmultiple quotations", color: "#F59E0B", icon: <PanelsTopLeft className="w-8 h-8" /> },
-    { title: "Receive samples & share your\napproval / feedback", color: "#EAB308", icon: <ThumbsUp className="w-8 h-8" /> },
-    { title: "Raise PO & start tracking\norders on the dashboard", color: "#10B981", icon: <Gauge className="w-8 h-8" /> },
-    { title: "Completed/Delivered", color: "#0EA5E9", icon: <Truck className="w-8 h-8" /> },
+    { title: "Send your requirement", color: "#EF4444", icon: <FolderUp className="w-6 h-6" /> },
+    { title: "Get multiple quotations", color: "#F59E0B", icon: <PanelsTopLeft className="w-6 h-6" /> },
+    { title: "Receive samples & share your approval / feedback", color: "#EAB308", icon: <ThumbsUp className="w-6 h-6" /> },
+    { title: "Raise PO & start tracking orders on the dashboard", color: "#10B981", icon: <Gauge className="w-6 h-6" /> },
+    { title: "Completed/Delivered", color: "#0EA5E9", icon: <Truck className="w-6 h-6" /> },
   ];
 
   const heroImg = "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/a35eb6b9-f638-4c19-b8d9-0d5c54558c5c.png";
@@ -64,29 +64,81 @@ export default function YourBusinesses() {
         @keyframes fadeUp { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
         .fade-in { animation: fadeUp .35s ease-out both; }
 
-        /* Expertise tiles */
-        @keyframes pop { 0% { transform: translateY(6px) scale(.96); opacity:.0 } 100% { transform: translateY(0) scale(1); opacity:1 } }
-        .pop-in { animation: pop .45s cubic-bezier(.2,.8,.2,1) both; }
-        .shine:before{ content:""; position:absolute; inset:-2px; border-radius:1rem; background: radial-gradient(120px 80px at 10% -10%, rgba(255,255,255,.35), transparent 60%); opacity:0; transition:opacity .25s ease; }
-        .tile:hover .shine:before{ opacity:1 }
+        /* card surface */
+        .card-surface { background: #fff; border-radius: 14px; box-shadow: 0 12px 36px rgba(2,6,23,0.06); border: 1px solid rgba(15,23,42,0.04); }
 
-        /* How it works - grid & cards */
-        .hiw-grid { display:grid; grid-template-columns: repeat(5, 1fr); gap: 24px; position:relative; }
-        .hiw-card { position:relative; background:#fff; border-radius:16px; border:1px solid rgba(15,23,42,.06);
-                    box-shadow:0 12px 40px rgba(0,0,0,.08); min-height:260px; transition:transform .2s ease, box-shadow .2s ease; }
-        .hiw-card:hover { transform: translateY(-4px); box-shadow:0 28px 60px rgba(0,0,0,.12); }
-        .icon-glow { filter: drop-shadow(0 8px 30px rgba(37,99,235,.18)); }
+        /* HOW IT WORKS layout - flex columns match height */
+        .hiw-split { display:block; }
+        .hiw-left { width:100%; }
+        .hiw-left-inner { display:flex; flex-direction:column; gap:18px; }
 
-        /* Connectors between cards (desktop) */
-        .hiw-card.with-arrow::after { content:""; position:absolute; top:50%; right:-22px; width:28px; border-top:2px dashed rgba(15,23,42,.2); transform:translateY(-50%); }
-        .hiw-card.with-arrow::before { content:""; position:absolute; top:50%; right:-22px; transform:translate(28px,-50%); border-left:8px solid rgba(15,23,42,.35); border-top:6px solid transparent; border-bottom:6px solid transparent; }
+        /* Title centered in the left card */
+        .hiw-title-wrap { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; margin: 6px 0 8px; }
+        .hiw-title { font-weight:800; font-size:22px; line-height:1; }
+        .hiw-sub { color: #64748b; font-size:14px; margin-bottom:8px; text-align:center; }
 
-        @media (max-width: 1023px){
-          .hiw-grid { display:none; } /* use mobile scroller */
+        /* step box */
+        .hiw-step-row { display:flex; justify-content:center; }
+        .hiw-step-box {
+          display:flex;
+          align-items:center;
+          gap:14px;
+          padding:12px 16px;
+          background: #fff;
+          border-radius:12px;
+          box-shadow: 0 12px 30px rgba(2,6,23,0.06);
+          border:1px solid rgba(15,23,42,0.03);
+          width:100%;
+          max-width:520px;
+        }
+        .hiw-step-square {
+          width:56px; height:56px; min-width:56px;
+          border-radius:10px;
+          display:flex; align-items:center; justify-content:center;
+          box-shadow:0 8px 18px rgba(2,6,23,0.05);
+        }
+        .hiw-step-text { font-weight:700; color:#0f172a; white-space:pre-line; font-size:15px; }
+
+        /* centered down arrow between steps */
+        .hiw-down { display:flex; justify-content:center; margin-top:8px; }
+        .hiw-down svg { color: rgba(15,23,42,0.45); }
+
+        /* right image container */
+        .hiw-right { display:flex; align-items:stretch; justify-content:center; }
+        .hiw-img-wrap { flex:1 1 0%; display:flex; align-items:center; justify-content:center; }
+        .hiw-img-wrap img { height:100%; width:auto; max-height:520px; object-fit:contain; border-radius:12px; box-shadow:0 16px 40px rgba(2,6,23,0.06); }
+
+        /* --- EQUAL HEIGHT FLEX FOR "HOW IT WORKS" --- */
+        @media (min-width: 900px) {
+          .hiw-split {
+            display:flex; gap:28px; align-items:stretch; min-height:420px;
+          }
+          .hiw-left, .hiw-right {
+            flex:1 1 0; display:flex; flex-direction:column; align-items:stretch; justify-content:stretch; min-height: 420px;
+          }
+          .hiw-left-inner, .hiw-img-wrap {
+            flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; height:100%;
+          }
+          .hiw-img-wrap img {
+            max-height:100%;
+            height:100%;
+            min-height: 320px;
+          }
+        }
+
+        /* mobile */
+        @media (max-width: 899px) {
+          .hiw-split { display:block; }
+          .hiw-step-box { padding:10px 12px; border-radius:12px; max-width:100%; }
+          .hiw-step-square { width:48px; height:48px; min-width:48px; }
+          .hiw-step-text { font-size:14px; }
+          .hiw-img-wrap { padding:12px; }
+          .hiw-img-wrap img { width:100%; height:auto; max-height:360px; }
+          .hiw-left { padding:18px 12px; }
         }
       `}</style>
 
-      {/* ===== HERO ===== */}
+      {/* ===== HERO (unchanged) ===== */}
       <section className="relative h-[420px] md:h-[520px] w-full overflow-visible">
         <img src={heroImg} alt="Business solutions cover" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/30" />
@@ -100,12 +152,11 @@ export default function YourBusinesses() {
         </div>
       </section>
 
-      {/* ===== INDUSTRIES ===== */}
+      {/* ===== INDUSTRIES (unchanged) ===== */}
       <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-40 pb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-center mb-8">
           Industries <span style={{ color: BRAND }}>We Power</span>
         </h2>
-
         <div role="tablist" aria-label="Industries" className="mx-auto w-full bg-white rounded-xl shadow-md p-1 fade-in">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
             {industries.map((it, i) => {
@@ -129,7 +180,6 @@ export default function YourBusinesses() {
             })}
           </div>
         </div>
-
         <div className="mt-4 fade-in">
           {industries.map((it, i) => {
             const pal = palettes[i % palettes.length];
@@ -155,15 +205,12 @@ export default function YourBusinesses() {
                       <p className="text-sm text-slate-600">{it.sub}</p>
                     </div>
                   </div>
-
                   <p className="mt-4 text-slate-800 leading-7">{it.body}</p>
-
                   <Link
-                  to="/contact"
-                   className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-4 py-2 text-sm hover:bg-slate-800 transition">
+                    to="/contact"
+                    className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-4 py-2 text-sm hover:bg-slate-800 transition">
                     Get started <ChevronRight className="w-4 h-4" />
                   </Link>
-                  
                 </div>
               </section>
             );
@@ -171,12 +218,11 @@ export default function YourBusinesses() {
         </div>
       </div>
 
-      {/* ===== OUR EXPERTISE ===== */}
+      {/* ===== OUR EXPERTISE (unchanged) ===== */}
       <section className="max-w-6xl mx-auto px-6 pt-6 md:pt-10 pb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-center mb-8">
           Our <span style={{ color: BRAND }}>Expertise</span>
         </h2>
-
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-12 place-items-center">
           {expertise.map((item, i) => (
             <div key={i} className="group flex flex-col items-center pop-in" style={{ animationDelay: `${i * 70}ms` }}>
@@ -196,51 +242,49 @@ export default function YourBusinesses() {
         </div>
       </section>
 
-      {/* ===== HOW IT WORKS ===== */}
+      {/* ===== HOW IT WORKS (vertical left + image right - flexbox ensures equal heights) ===== */}
       <section className="max-w-6xl mx-auto px-6 pt-2 pb-20">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
-          How <span style={{ color: BRAND }}>it works</span>
-        </h2>
-
-        {/* Desktop/tablet: perfect same-size grid with built-in connectors */}
-        <div className="hiw-grid">
-          {howItWorks.map((s, i) => (
-            <div key={i} className={`hiw-card ${i < howItWorks.length - 1 ? "with-arrow" : ""}`}>
-              <div className="p-6 lg:p-8 text-center h-full flex flex-col justify-center">
-                <div
-                  className="mx-auto mb-5 flex items-center justify-center w-16 h-16 rounded-2xl icon-glow"
-                  style={{ background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`, color: s.color }}
-                >
-                  {s.icon}
+        <div className="hiw-split">
+          {/* LEFT: card surface with centered title */}
+          <div className="hiw-left card-surface">
+            <div className="hiw-left-inner p-8">
+              <div className="hiw-title-wrap">
+                <div className="hiw-title">
+                  <span style={{ color: "#000" }}>How</span>{" "}
+                  <span style={{ color: BRAND }}>it works?</span>
                 </div>
-                <p className="text-lg font-extrabold text-slate-900 whitespace-pre-line leading-snug">
-                  {s.title}
-                </p>
+                <div className="hiw-sub">Simple steps to get your purchase delivered.</div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile: swipeable cards */}
-        <div className="md:hidden overflow-x-auto mt-4 [-webkit-overflow-scrolling:touch]">
-          <div className="flex items-stretch gap-4 pr-2">
-            {howItWorks.map((s, i) => (
-              <div key={`m-${i}`} className="min-w-[80%]">
-                <div className="hiw-card">
-                  <div className="p-6 text-center flex flex-col justify-center">
-                    <div
-                      className="mx-auto mb-4 flex items-center justify-center w-14 h-14 rounded-2xl icon-glow"
-                      style={{ background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`, color: s.color }}
-                    >
-                      {s.icon}
+              {/* Steps */}
+              {howItWorks.map((s, i) => (
+                <div key={i} className="mb-2">
+                  <div className="hiw-step-row">
+                    <div className="hiw-step-box">
+                      <div
+                        className="hiw-step-square"
+                        style={{ background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`, color: s.color }}
+                        aria-hidden
+                      >
+                        {s.icon}
+                      </div>
+                      <div className="hiw-step-text">{s.title}</div>
                     </div>
-                    <p className="text-base font-extrabold text-slate-900 whitespace-pre-line leading-snug">
-                      {s.title}
-                    </p>
                   </div>
+                  {/* centered down arrow between steps (except last) */}
+                  {i < howItWorks.length - 1 && (
+                    <div className="hiw-down">
+                      <ChevronDown className="w-5 h-5" />
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+          {/* RIGHT: image container - flex makes it match left height */}
+          <div className="hiw-right">
+            <div className="hiw-img-wrap">
+              <img src={workflowImg} alt="How it works flow" />
+            </div>
           </div>
         </div>
       </section>

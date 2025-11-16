@@ -42,7 +42,7 @@ export default function HeroSection() {
           <img
             src={courierImg}
             alt="Procurement as a Service"
-            className="w-[130%] max-w-[45rem] object-contain relative right-[-6rem]"
+            className="w-[100%] max-w-[45rem] object-contain relative right-[-2rem]"
           />
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-gray-50 via-gray-50/40 to-transparent pointer-events-none"></div>
         </motion.div>
