@@ -77,7 +77,7 @@ export default function Track() {
 
             <div className="space-y-3">
               <p className="text-blue-500 font-medium">
-                Trackon to ProDiligix never asks customers to pay online or share OTP / UPI
+                ProDiligix never asks customers to pay online or share OTP / UPI
                 Pin. Any such request over phone may be treated as a fraud call.
               </p>
 

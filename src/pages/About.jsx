@@ -104,7 +104,6 @@ export default function About() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mt-8"
           >
-
             <Link
               to="/contact"
               className="inline-flex items-center rounded-xl px-5 py-3 font-semibold bg-[#2D5DD5] text-white hover:bg-[#253F83] transition-colors shadow"
@@ -113,20 +112,17 @@ export default function About() {
             </Link>
           </motion.div>
         </div>
-        <div>
-          <img src={map} alt="" className="mx-auto" />
-        </div>
       </section>
 
       {/* COMPANY OVERVIEW — removed negative margin; clean spacing on white */}
-      <section className="relative">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="flex flex-wrap w-[80%] mx-auto">
+        <div className="w-1/2 px-6">
           <div className="card-glass rounded-2xl shadow-xl p-6 md:p-8 animate-fadeInUp">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Company Overview
             </h2>
             <p className="mt-4 text-gray-700 leading-7">
-              ProDiligix is India’s one-stop indirect procurement and logistics
+              ProDiligix is India's one-stop indirect procurement and logistics
               platform, bringing clarity, control, and efficiency to business
               operations. We power the global supply chain through a B2B
               centralized platform that supports industries like IT,
@@ -137,6 +133,9 @@ export default function About() {
               focus on growth, not coordination.
             </p>
           </div>
+        </div>
+        <div className="w-1/2">
+          <img src={map} alt="" className="mx-auto" />
         </div>
       </section>
 

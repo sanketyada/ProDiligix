@@ -6,7 +6,7 @@ import {
   FolderUp, PanelsTopLeft, ThumbsUp, Gauge
 } from "lucide-react";
 import ContactSection from "../components/sections/ContactSection";
-
+import ProcessImage from "../components/assets/images/Process Flow Chart.svg"
 const BRAND = "#246bed";
 
 export default function YourBusinesses() {
@@ -50,10 +50,10 @@ export default function YourBusinesses() {
   // How it works — 5 steps, equal size
   const howItWorks = [
     { title: "Send your\nrequirement", color: "#EF4444", icon: <FolderUp className="w-8 h-8" /> },
-    { title: "Choose Suppliers & get\nmultiple quotations", color: "#F59E0B", icon: <PanelsTopLeft className="w-8 h-8" /> },
+    { title: "Get\nmultiple quotations", color: "#F59E0B", icon: <PanelsTopLeft className="w-8 h-8" /> },
     { title: "Receive samples & share your\napproval / feedback", color: "#EAB308", icon: <ThumbsUp className="w-8 h-8" /> },
     { title: "Raise PO & start tracking\norders on the dashboard", color: "#10B981", icon: <Gauge className="w-8 h-8" /> },
-    { title: "Delivery", color: "#0EA5E9", icon: <Truck className="w-8 h-8" /> },
+    { title: "Completed/Delivered", color: "#0EA5E9", icon: <Truck className="w-8 h-8" /> },
   ];
 
   const heroImg = "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/a35eb6b9-f638-4c19-b8d9-0d5c54558c5c.png";
@@ -239,6 +239,9 @@ export default function YourBusinesses() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="mt-4 mx-30 p-10">
+          <img src={ProcessImage} alt="" />
         </div>
       </section>
 

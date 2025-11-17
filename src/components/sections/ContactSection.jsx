@@ -13,6 +13,7 @@ export default function ContactSection() {
 
   const [formData, setFormData] = useState({
     industry: "",
+    otherIndustry: "",
     name: "",
     company: "",
     email: "",
@@ -27,6 +28,14 @@ export default function ContactSection() {
       ...prev,
       [name]: value,
     }));
+
+    // Clear otherIndustry if user selects a different option
+    if (name === "industry" && value !== "other") {
+      setFormData((prev) => ({
+        ...prev,
+        otherIndustry: "",
+      }));
+    }
   };
 
   // ⭐ EmailJS Submit Function
@@ -39,9 +48,18 @@ export default function ContactSection() {
       })
       .then(
         () => {
-          console.log("SUCCESS!");6
+          console.log("SUCCESS!");
           alert("Email Sent Successfully!");
-          e.target.reset();
+          setFormData({
+            industry: "",
+            otherIndustry: "",
+            name: "",
+            company: "",
+            email: "",
+            countryCode: "+91",
+            phone: "",
+            requirement: "",
+          });
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -53,7 +71,6 @@ export default function ContactSection() {
   return (
     <div className="bg-slate-800 py-10 px-4 sm:px-6 md:px-10 lg:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        
         {/* Left Section */}
         <div className="text-center lg:text-left space-y-6">
           <h1 className="text-2xl md:text-3xl font-bold text-white">
@@ -62,12 +79,11 @@ export default function ContactSection() {
 
           <p className="text-white text-base md:text-lg">
             Enhancing business efficiency with innovative, seamless, and
-            cost-optimized solutions. Partnering with you from
-            Sourcing to Delivery.
+            cost-optimized solutions. Partnering with you from Sourcing to
+            Delivery.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
-
             {/* Card 1 */}
             <div className="bg-red-50 rounded-2xl p-6 text-center space-y-3">
               <div className="flex justify-center">
@@ -97,7 +113,8 @@ export default function ContactSection() {
 
           <p className="text-white text-sm max-w-md mx-auto lg:mx-0">
             By submitting this form, you agree that ProDiligix may contact you
-            regarding our products, services, events, and other information you request.
+            regarding our products, services, events, and other information you
+            request.
           </p>
         </div>
 
@@ -120,13 +137,51 @@ export default function ContactSection() {
             required
           >
             <option value="">Select Industry Solutions*</option>
-            <option value="automotive">Automotive</option>
-            <option value="electronics">Electronics</option>
-            <option value="textiles">Textiles & Apparel</option>
-            <option value="healthcare">Healthcare</option>
-            <option value="food">Food & Beverage</option>
-            <option value="manufacturing">Manufacturing</option>
+            <option
+              value="IT Industry
+"
+            >
+              IT Industry
+            </option>
+            <option
+              value="Manufacturing 
+"
+            >
+              Manufacturing
+            </option>
+            <option
+              value="eCommerce
+"
+            >
+              eCommerce
+            </option>
+            <option
+              value="FMCG
+"
+            >
+              FMCG
+            </option>
+            <option
+              value="Service Sector
+"
+            >
+              Service Sectore
+            </option>
+            <option value="other">Other</option>
           </select>
+
+          {/* Other Industry Input - Shows when "Other" is selected */}
+          {formData.industry === "other" && (
+            <input
+              type="text"
+              name="otherIndustry"
+              placeholder="Please specify your industry*"
+              value={formData.otherIndustry}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500"
+              required
+            />
+          )}
 
           {/* Name */}
           <input
