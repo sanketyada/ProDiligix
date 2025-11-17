@@ -115,29 +115,34 @@ export default function About() {
       </section>
 
       {/* COMPANY OVERVIEW — removed negative margin; clean spacing on white */}
-      <section className="flex flex-wrap w-[80%] mx-auto">
-        <div className="w-1/2 px-6">
-          <div className="card-glass rounded-2xl shadow-xl p-6 md:p-8 animate-fadeInUp">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Company Overview
-            </h2>
-            <p className="mt-4 text-gray-700 leading-7">
-              ProDiligix is India's one-stop indirect procurement and logistics
-              platform, bringing clarity, control, and efficiency to business
-              operations. We power the global supply chain through a B2B
-              centralized platform that supports industries like IT,
-              Manufacturing, and eCommerce — covering everything from sourcing
-              to delivery. With SLA-backed services, verified vendors, and
-              real-time tracking, ProDiligix helps businesses reduce costs,
-              simplify operations, and eliminate vendor chaos — enabling them to
-              focus on growth, not coordination.
-            </p>
-          </div>
-        </div>
-        <div className="w-1/2">
-          <img src={map} alt="" className="mx-auto" />
-        </div>
-      </section>
+<section className="w-full lg:w-[80%] mx-auto px-4 sm:px-6 py-8 md:py-12">
+  <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-8 items-center">
+    {/* Company Overview - Shows second on mobile, first on desktop */}
+    <div className="w-full md:w-1/2">
+      <div className="card-glass rounded-2xl shadow-xl p-6 md:p-8 animate-fadeInUp">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+          Company Overview
+        </h2>
+        <p className="mt-4 text-sm sm:text-base text-gray-700 leading-6 sm:leading-7">
+          ProDiligix is India's one-stop indirect procurement and logistics
+          platform, bringing clarity, control, and efficiency to business
+          operations. We power the global supply chain through a B2B
+          centralized platform that supports industries like IT,
+          Manufacturing, and eCommerce — covering everything from sourcing
+          to delivery. With SLA-backed services, verified vendors, and
+          real-time tracking, ProDiligix helps businesses reduce costs,
+          simplify operations, and eliminate vendor chaos — enabling them to
+          focus on growth, not coordination.
+        </p>
+      </div>
+    </div>
+
+    {/* Map Image - Shows first on mobile, second on desktop */}
+    <div className="w-full md:w-1/2">
+      <img src={map} alt="Company map" className="w-full h-auto max-w-md md:max-w-full mx-auto" />
+    </div>
+  </div>
+</section>
 
       {/* HOW IT WORKS */}
       <section className="mt-14 md:mt-20">
