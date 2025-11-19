@@ -1,4 +1,4 @@
-/* ===== Base Section ===== */
+/* Base Section */
 .info-section {
   width: 100vw;
   min-height: 480px;
@@ -27,7 +27,7 @@
   transform: translateY(0);
 }
 
-/* ===== Overlay ===== */
+/* Overlay Effects Bootstrap */
 .info-section::before {
   content: "";
   position: absolute;
@@ -45,7 +45,7 @@
   opacity: 1;
 }
 
-/* ===== Content ===== */
+/* Content */
 .info-section-content {
   max-width: 1100px;
   width: 100%;
@@ -67,7 +67,7 @@
   transform: translateY(0);
 }
 
-/* ===== Quote mark - always visible ===== */
+/* Quote mark */
 .info-quote-mark {
   font-size: 4.7rem;
   font-weight: 900;
@@ -78,7 +78,7 @@
   display: block;
 }
 
-/* ===== Paragraph animation ===== */
+/* Paragraph animation */
 .info-section-content p {
   font-size: 1.32rem;
   font-weight: 600;
@@ -103,7 +103,6 @@
   transition-delay: 0.9s;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 1000px) {
   .info-section {
     min-height: auto;

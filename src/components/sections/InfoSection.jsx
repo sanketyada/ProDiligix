@@ -12,10 +12,10 @@ const InfoSection = () => {
         const entry = entries[0];
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect(); // only trigger once
+          observer.disconnect();
         }
       },
-      { threshold: 0.3 } // trigger when 30% visible
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);

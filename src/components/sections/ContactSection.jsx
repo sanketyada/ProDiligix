@@ -29,7 +29,6 @@ export default function ContactSection() {
       [name]: value,
     }));
 
-    // Clear otherIndustry if user selects a different option
     if (name === "industry" && value !== "other") {
       setFormData((prev) => ({
         ...prev,
@@ -38,7 +37,7 @@ export default function ContactSection() {
     }
   };
 
-  // ⭐ EmailJS Submit Function
+  // EmailJS Submit Function
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -170,7 +169,6 @@ export default function ContactSection() {
             <option value="other">Other</option>
           </select>
 
-          {/* Other Industry Input - Shows when "Other" is selected */}
           {formData.industry === "other" && (
             <input
               type="text"

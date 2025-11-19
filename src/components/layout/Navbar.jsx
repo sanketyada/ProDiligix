@@ -32,7 +32,6 @@ const Navbar = () => {
               />
             </Link>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-5 lg:gap-8">
               {/* Dropdown */}
               <div
@@ -97,7 +96,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Right Buttons */}
+          {/* Right Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <Link
               to="/track"
@@ -113,7 +112,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Nav Drawer */}
           <button
             className="md:hidden text-white focus:outline-none ml-auto"
             onClick={() => setMenuOpen(!menuOpen)}

@@ -14,7 +14,6 @@ function UserContextProvider({ children }) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
-  // Manual control function
   const scrollToTop = (smooth = true) => {
     window.scrollTo({
       top: 0,
