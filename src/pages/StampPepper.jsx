@@ -44,14 +44,14 @@ const StampPaperProcurement = () => {
 
   return (
     <div className="w-full">
-      {/* Header Image */}
+      {/* Image */}
       <img
         src={stampImg}
         alt="Stamp Paper Procurement"
         className="w-full h-72 object-cover"
       />
 
-      {/* Main Content */}
+      {/* Content */}
       <div className="max-w-6xl mx-auto px-6 py-12">
         <h1 className="text-3xl md:text-4xl font-bold text-center text-[#2D5DD5] mb-10">
           Stamp Paper Procurement Services

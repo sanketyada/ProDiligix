@@ -1,12 +1,12 @@
-/* ===== Section ===== */
+/* Section */
 .whypro-section {
   position: relative;
   padding: 6rem 0;
-  background: transparent; /* ✅ no background color/gradient */
+  background: transparent;
   overflow: hidden;
 }
 
-/* ===== Background Glow Circles ===== */
+/* Background Glow Circles */
 .whypro-bg::before,
 .whypro-bg::after {
   content: "";
@@ -14,7 +14,7 @@
   border-radius: 50%;
   filter: blur(100px);
   z-index: 0;
-  opacity: 0.4; /* subtle glow only */
+  opacity: 0.4;
 }
 
 .whypro-bg::before {
@@ -33,7 +33,7 @@
   background: rgba(0, 180, 255, 0.12);
 }
 
-/* ===== Container ===== */
+/* Container */
 .whypro-container {
   position: relative;
   z-index: 1;
@@ -43,7 +43,7 @@
   text-align: center;
 }
 
-/* ===== Heading ===== */
+/* Heading */
 .whypro-title {
   font-size: 2.6rem;
   font-weight: 800;
@@ -63,16 +63,16 @@
   line-height: 1.6;
 }
 
-/* ===== Grid ===== */
+/* Grid */
 .whypro-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
 }
 
-/* ===== Card ===== */
+/* Cards */
 .whypro-card {
-  background: rgba(255, 255, 255, 0.75); /* ✅ light transparency so bg shows */
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 1.5rem;
   padding: 2rem;
   text-align: center;
@@ -89,7 +89,7 @@
   border-color: rgba(0, 119, 200, 0.4);
 }
 
-/* ===== Icon ===== */
+/* Icons */
 .whypro-icon {
   width: 6rem;
   height: 6rem;
@@ -117,7 +117,7 @@
   transform: scale(1.1);
 }
 
-/* ===== Title ===== */
+/* Title */
 .whypro-card-title {
   font-size: 1.4rem;
   font-weight: 600;
@@ -126,19 +126,19 @@
   transition: color 0.3s ease;
 }
 
-/* 🟦 Hover effect same as OurServices */
+/* Hover Effects */
 .whypro-card:hover .whypro-card-title {
   color: #246bed;
 }
 
-/* ===== Description ===== */
+/* Description */
 .whypro-card-desc {
   color: #555;
   font-size: 1rem;
   line-height: 1.6;
 }
 
-/* ===== Glow Border ===== */
+/* Glow Border */
 .whypro-card-glow {
   position: absolute;
   inset: 0;

@@ -1,4 +1,3 @@
-// About.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -72,7 +71,7 @@ export default function About() {
         .card-glass { background: rgba(255,255,255,0.9); backdrop-filter: blur(6px); }
       `}</style>
 
-      {/* HERO — now white background */}
+      {/* HERO */}
       <section className="relative overflow-hidden bg-white ">
         <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
           <motion.h1
@@ -114,10 +113,9 @@ export default function About() {
         </div>
       </section>
 
-      {/* COMPANY OVERVIEW — removed negative margin; clean spacing on white */}
+      {/* COMPANY OVERVIEW */}
 <section className="w-full lg:w-[80%] mx-auto px-4 sm:px-6 py-8 md:py-12">
   <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-8 items-center">
-    {/* Company Overview - Shows second on mobile, first on desktop */}
     <div className="w-full md:w-1/2">
       <div className="card-glass rounded-2xl shadow-xl p-6 md:p-8 animate-fadeInUp">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
@@ -137,7 +135,7 @@ export default function About() {
       </div>
     </div>
 
-    {/* Map Image - Shows first on mobile, second on desktop */}
+    {/* Map Image */}
     <div className="w-full md:w-1/2">
       <img src={map} alt="Company map" className="w-full h-auto max-w-md md:max-w-full mx-auto" />
     </div>

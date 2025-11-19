@@ -59,7 +59,7 @@ export default function OurServices() {
   return (
     <section id="our-services" className="our-services-section">
       <div className="our-services-container">
-        {/* Section Title Animation */}
+        {/* Section Title with Animation */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,4 +1,4 @@
-/* ===== Section Styling ===== */
+/* Section Styling */
 .our-services-section {
   padding: 6rem 0;
   background: transparent;
@@ -6,12 +6,11 @@
   overflow: hidden;
 }
 
-/* Remove unnecessary radial gradient */
 .our-services-section::before {
   display: none;
 }
 
-/* ===== Container ===== */
+/* Container */
 .our-services-container {
   position: relative;
   z-index: 1;
@@ -21,7 +20,7 @@
   text-align: center;
 }
 
-/* ===== Title ===== */
+/*  Title */
 .our-services-title {
   font-size: 2.4rem;
   font-weight: 700;
@@ -30,7 +29,7 @@
 }
 
 .our-services-title span {
-  color: #246bed; /* your theme color */
+  color: #246bed;
 }
 
 .our-services-subtext {
@@ -41,16 +40,16 @@
   line-height: 1.6;
 }
 
-/* ===== Grid ===== */
+/* Grid */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
 }
 
-/* ===== Card ===== */
+/* Cards */
 .service-card {
-  background: rgba(255, 255, 255, 0.85); /* light translucent so it blends with your main bg */
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
@@ -64,7 +63,7 @@
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
-/* ===== Image ===== */
+/* Images */
 .service-image-wrapper {
   position: relative;
   overflow: hidden;
@@ -81,12 +80,12 @@
   transform: scale(1.05);
 }
 
-/* Remove dark overlay */
+/* Overlay */
 .service-image-overlay {
   display: none;
 }
 
-/* ===== Text ===== */
+/* Text */
 .service-text {
   padding: 1.8rem;
   text-align: left;
@@ -111,11 +110,11 @@
   line-height: 1.6;
 }
 
-/* ===== Link ===== */
+/* Link */
 .service-link {
   display: inline-flex;
   align-items: center;
-  color: #246bed; /* your chosen color */
+  color: #246bed;
   font-weight: 500;
   font-size: 0.95rem;
   text-decoration: none;
@@ -137,7 +136,7 @@
   transform: translateX(4px);
 }
 
-/* ===== Bottom Accent ===== */
+/* Bottom Accent */
 .card-accent {
   position: absolute;
   bottom: 0;

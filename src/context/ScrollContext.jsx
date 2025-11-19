@@ -11,7 +11,6 @@ export const ScrollProvider = ({ children }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
-  // Manual control function
   const scrollToTop = (smooth = true) => {
     window.scrollTo({
       top: 0,
@@ -26,5 +25,4 @@ export const ScrollProvider = ({ children }) => {
   );
 };
 
-// Custom hook for easy use
 export const useScroll = () => useContext(ScrollContext);

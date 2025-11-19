@@ -7,9 +7,8 @@ export default function contact() {
     <div>
       <section className="bg-white text-slate-800 py-12 px-6 md:px-16">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-          {/* Left Section - Contact Info */}
+          {/* Left Section */}
           <div className="space-y-8">
-            {/* Headline */}
             <div>
               <h2 className="text-3xl font-bold mb-3 text-slate-900">
                 Your next generation Indirect Procurement Partner

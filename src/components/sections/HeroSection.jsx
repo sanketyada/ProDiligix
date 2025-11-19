@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section className="bg-gray-50 py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
-        {/* === Left Content === */}
+        {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function HeroSection() {
           </p>
         </motion.div>
 
-        {/* === Right Image === */}
+        {/* Right Image */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}

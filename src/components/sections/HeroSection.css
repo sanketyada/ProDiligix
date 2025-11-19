@@ -1,11 +1,9 @@
-/* ===== Base Section ===== */
 .hero-section {
   background-color: #f9fafb;
   padding: 5rem 0 4rem;
   overflow: hidden;
 }
 
-/* ===== Layout ===== */
 .hero-container {
   max-width: 75rem;
   margin: 0 auto;
@@ -28,7 +26,6 @@
   max-width: 40rem;
 }
 
-/* ===== Typography ===== */
 .hero-label {
   font-size: 0.95rem;
   letter-spacing: 0.1em;
@@ -68,7 +65,7 @@
   max-width: 32rem;
 }
 
-/* ===== Button ===== */
+/* Button */
 .hero-button {
   background-color: #2D5DD5;
   color: #fff;
@@ -86,8 +83,7 @@
   transform: translateY(-2px);
 }
 
-/* ===== Image Section ===== */
-/* ===== Image Section ===== */
+/* Image Section */
 .hero-image-container {
   flex: 1;
   display: flex;
@@ -119,7 +115,7 @@
   pointer-events: none;
 }
 
-/* ===== Animation (faster and subtle) ===== */
+/* Animations */
 @keyframes slideUpFade {
   0% {
     opacity: 0;

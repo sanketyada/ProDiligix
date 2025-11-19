@@ -15,7 +15,6 @@ import {
   CalendarCheck,
   Users,
   Laptop,
-  // How it works icons (distinct from Expertise)
   FolderUp,
   PanelsTopLeft,
   ThumbsUp,
@@ -69,7 +68,7 @@ export default function YourBusinesses() {
     },
   ];
 
-  // Our Expertise tiles
+  // Our Expertise
   const expertise = [
     {
       title: "Shipping and\nreceiving",
@@ -118,7 +117,7 @@ export default function YourBusinesses() {
     },
   ];
 
-  // How it works — 5 steps, equal size
+  // How it works
   const howItWorks = [
     {
       title: "Send your\nrequirement",
@@ -178,7 +177,7 @@ export default function YourBusinesses() {
         }
       `}</style>
 
-      {/* ===== HERO ===== */}
+      {/* HERO */}
       <section className="relative h-[420px] md:h-[520px] w-full overflow-visible">
         <img
           src={heroImg}
@@ -196,7 +195,7 @@ export default function YourBusinesses() {
         </div>
       </section>
 
-      {/* ===== INDUSTRIES ===== */}
+      {/* INDUSTRIES */}
       <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-40 pb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-center mb-8">
           Industries <span style={{ color: BRAND }}>We Power</span>
@@ -280,7 +279,7 @@ export default function YourBusinesses() {
         </div>
       </div>
 
-      {/* ===== OUR EXPERTISE ===== */}
+      {/* OUR EXPERTISE */}
       <section className="max-w-6xl mx-auto px-6 pt-6 md:pt-10 pb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-center mb-8">
           Our <span style={{ color: BRAND }}>Expertise</span>
@@ -311,13 +310,13 @@ export default function YourBusinesses() {
         </div>
       </section>
 
-      {/* ===== HOW IT WORKS ===== */}
+      {/* HOW IT WORKS */}
 <section className="max-w-6xl mx-auto px-6 pt-2 pb-20">
   <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
     How <span style={{ color: BRAND }}>it works</span>
   </h2>
 
-  {/* Desktop/tablet: perfect same-size grid with built-in connectors */}
+  {/* Responsive */}
   <div className="hiw-grid">
     {howItWorks.map((s, i) => (
       <div
@@ -344,7 +343,7 @@ export default function YourBusinesses() {
     ))}
   </div>
 
-  {/* Mobile: swipeable cards */}
+  {/* Mobile: cards */}
   <div className="md:hidden overflow-x-auto mt-4 [-webkit-overflow-scrolling:touch]">
     <div className="flex items-stretch gap-4 pr-2">
       {howItWorks.map((s, i) => (
@@ -371,7 +370,7 @@ export default function YourBusinesses() {
   </div>
 </section>
 
-{/* SVG Image - Outside section to break free from max-w-6xl constraint */}
+{/* SVG Image */}
 <div className="mt-8 -mx-6 px-10 sm:px-6 md:px-8">
   <img
     src={ProcessImage}

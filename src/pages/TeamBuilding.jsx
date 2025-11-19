@@ -45,7 +45,7 @@ const TeamBuilding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Image */}
+      {/* Image */}
       <div className="w-full">
         <img
           src={teamImg}
@@ -54,7 +54,7 @@ const TeamBuilding = () => {
         />
       </div>
 
-      {/* Main Content */}
+      {/* Content */}
       <div className="max-w-6xl mx-auto px-6 py-12">
         <h1 className="text-3xl md:text-4xl font-bold text-[#2D5DD5] mb-6 text-center">
           Team Building Activities
@@ -66,7 +66,7 @@ const TeamBuilding = () => {
           long-lasting professional relationships.
         </p>
 
-        {/* Activity Cards */}
+        {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {activities.map((activity, index) => (
             <div

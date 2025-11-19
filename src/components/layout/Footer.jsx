@@ -36,7 +36,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-100">
-      {/* Main Footer Content */}
+      {/* Footer Content */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {footerSections.map((section, index) => (
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom Content */}
       <div className="border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-700 text-sm">
