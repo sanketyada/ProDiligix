@@ -92,7 +92,8 @@
   position: relative;
   height: 26rem;
   padding-right: 2rem;
-  overflow: visible;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .hero-image {
@@ -100,8 +101,22 @@
   max-width: 43rem;
   object-fit: contain;
   position: relative;
-  right: -15rem;
+  right: 0;
+
   transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .hero-image {
+    right: -15rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-image {
+    width: 100%;
+    right: 0;
+  }
 }
 
 .hero-gradient {

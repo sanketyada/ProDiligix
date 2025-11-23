@@ -21,7 +21,7 @@ import {
   Gauge,
 } from "lucide-react";
 import ContactSection from "../components/sections/ContactSection";
-import ProcessImage from "../components/assets/images/FlwChart.svg";
+import ProcessImage from "../components/assets/images/FlwChart.jpeg";
 const BRAND = "#246bed";
 
 export default function YourBusinesses() {
@@ -150,7 +150,7 @@ export default function YourBusinesses() {
     "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/a35eb6b9-f638-4c19-b8d9-0d5c54558c5c.png";
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <style>{`
         @keyframes fadeUp { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
         .fade-in { animation: fadeUp .35s ease-out both; }
@@ -311,74 +311,74 @@ export default function YourBusinesses() {
       </section>
 
       {/* HOW IT WORKS */}
-<section className="max-w-6xl mx-auto px-6 pt-2 pb-20">
-  <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
-    How <span style={{ color: BRAND }}>it works</span>
-  </h2>
+      <section className="max-w-6xl mx-auto px-6 pt-2 pb-20">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
+          How <span style={{ color: BRAND }}>it works</span>
+        </h2>
 
-  {/* Responsive */}
-  <div className="hiw-grid">
-    {howItWorks.map((s, i) => (
-      <div
-        key={i}
-        className={`hiw-card ${
-          i < howItWorks.length - 1 ? "with-arrow" : ""
-        }`}
-      >
-        <div className="p-6 lg:p-8 text-center h-full flex flex-col justify-center">
-          <div
-            className="mx-auto mb-5 flex items-center justify-center w-16 h-16 rounded-2xl icon-glow"
-            style={{
-              background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`,
-              color: s.color,
-            }}
-          >
-            {s.icon}
-          </div>
-          <p className="text-lg font-extrabold text-slate-900 whitespace-pre-line leading-snug">
-            {s.title}
-          </p>
-        </div>
-      </div>
-    ))}
-  </div>
-
-  {/* Mobile: cards */}
-  <div className="md:hidden overflow-x-auto mt-4 [-webkit-overflow-scrolling:touch]">
-    <div className="flex items-stretch gap-4 pr-2">
-      {howItWorks.map((s, i) => (
-        <div key={`m-${i}`} className="min-w-[80%]">
-          <div className="hiw-card">
-            <div className="p-6 text-center flex flex-col justify-center">
-              <div
-                className="mx-auto mb-4 flex items-center justify-center w-14 h-14 rounded-2xl icon-glow"
-                style={{
-                  background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`,
-                  color: s.color,
-                }}
-              >
-                {s.icon}
+        {/* Responsive */}
+        <div className="hiw-grid">
+          {howItWorks.map((s, i) => (
+            <div
+              key={i}
+              className={`hiw-card ${
+                i < howItWorks.length - 1 ? "with-arrow" : ""
+              }`}
+            >
+              <div className="p-6 lg:p-8 text-center h-full flex flex-col justify-center">
+                <div
+                  className="mx-auto mb-5 flex items-center justify-center w-16 h-16 rounded-2xl icon-glow"
+                  style={{
+                    background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`,
+                    color: s.color,
+                  }}
+                >
+                  {s.icon}
+                </div>
+                <p className="text-lg font-extrabold text-slate-900 whitespace-pre-line leading-snug">
+                  {s.title}
+                </p>
               </div>
-              <p className="text-base font-extrabold text-slate-900 whitespace-pre-line leading-snug">
-                {s.title}
-              </p>
             </div>
+          ))}
+        </div>
+
+        {/* Mobile: cards */}
+        <div className="md:hidden overflow-x-auto mt-4 [-webkit-overflow-scrolling:touch]">
+          <div className="flex items-stretch gap-4 pr-2">
+            {howItWorks.map((s, i) => (
+              <div key={`m-${i}`} className="min-w-[80%]">
+                <div className="hiw-card">
+                  <div className="p-6 text-center flex flex-col justify-center">
+                    <div
+                      className="mx-auto mb-4 flex items-center justify-center w-14 h-14 rounded-2xl icon-glow"
+                      style={{
+                        background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`,
+                        color: s.color,
+                      }}
+                    >
+                      {s.icon}
+                    </div>
+                    <p className="text-base font-extrabold text-slate-900 whitespace-pre-line leading-snug">
+                      {s.title}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-{/* SVG Image */}
-<div className="mt-8 -mx-6 px-10 sm:px-6 md:px-8">
-  <img
-    src={ProcessImage}
-    alt="Process diagram"
-    className="w-full h-auto"
-    style={{ minHeight: '200px', maxWidth: '1000px', margin: '0 auto' }}
-  />
-</div>
+      {/* SVG Image */}
+      <div className="mt-8 w-full px-4 sm:px-6 md:px-8">
+        <img
+          src={ProcessImage}
+          alt="Process diagram"
+          className="w-full h-auto max-w-full"
+          style={{ minHeight: "200px", maxWidth: "1000px", margin: "0 auto" }}
+        />
+      </div>
 
       <ContactSection />
     </div>
