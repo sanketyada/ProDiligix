@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="bg-gray-50 py-10 overflow-hidden">
+    <section className="bg-white py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left Content */}
         <motion.div
@@ -15,7 +15,6 @@ export default function HeroSection() {
           <span className="text-sm tracking-[0.15em] text-blue-600 font-semibold uppercase mb-3 block">
             Procurement as a Service
           </span>
-
           <h3 className="text-2xl md:text-4xl font-light text-gray-900 leading-tight">
             <span className="block text-gray-900">
               Simplify and Centralize{" "}
@@ -25,7 +24,6 @@ export default function HeroSection() {
               with ProDiligix PAAS
             </span>
           </h3>
-
           <p className="text-gray-600 text-lg leading-relaxed mt-6 mb-8">
             ProDiligix unifies all your outsourcing needs on one intelligent
             platform, empowering your business to grow without limits.
@@ -44,7 +42,6 @@ export default function HeroSection() {
             alt="Procurement as a Service"
             className="w-[100%] max-w-[45rem] object-contain relative right-[-2rem]"
           />
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-gray-50 via-gray-50/40 to-transparent pointer-events-none"></div>
         </motion.div>
       </div>
     </section>

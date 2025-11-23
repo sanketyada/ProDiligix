@@ -86,8 +86,8 @@ export default function contact() {
                 <div>
                   <h4 className="font-semibold text-lg mb-1">Branch Office</h4>
                   <p className="text-slate-600 text-sm">
-                    2nd Floor, #108, 27th Main Road, Sector 2, HSR Layout,
-                    Opposite Corner House / KLM Mall - HSR 560008
+                    StartupHuts, 2nd Floor, #108, 27th Main Road, Sector 2, HSR Layout, 
+                    Opposite Corner House/KLM Mall - Bengaluru, Karnataka 560102
                   </p>
                 </div>
               </div>
