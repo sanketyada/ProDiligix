@@ -6,6 +6,11 @@ const countries = [
   { code: "+91", emoji: "🇮🇳", name: "India" },
   { code: "+1", emoji: "🇺🇸", name: "USA" },
   { code: "+44", emoji: "🇬🇧", name: "UK" },
+  { code: "+971", emoji: "🇦🇪", name: "United Arab Emirates" },
+  { code: "+7", emoji: "🇷🇺", name: "Russia" },
+  { code: "+977", emoji: "🇳🇵", name: "Nepal" },
+  { code: "+975", emoji: "🇧🇹", name: "Bhutan" },
+  { code: "+966", emoji: "🇸🇦", name: "Saudi Arabia" },
 ];
 
 const GetStartedForm = () => {
@@ -333,7 +338,7 @@ const GetStartedForm = () => {
                   <option value="manufacturing">Manufacturing</option>
                   <option value="ecommerce">eCommerce</option>
                   <option value="fmcg">FMCG</option>
-                  <option value="service">Service Sectore</option>
+                  <option value="service">Service Sector</option>
                   <option value="other">Other</option>
                 </select>
 
