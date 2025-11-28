@@ -141,7 +141,8 @@ export default function YourBusinesses() {
       icon: <Gauge className="w-8 h-8" />,
     },
     {
-      title: "Completed/Delivered",
+      // slash kept, with line break so it stays inside the card
+      title: "Completed/\nDelivered",
       color: "#0EA5E9",
       icon: <Truck className="w-8 h-8" />,
     },
@@ -151,7 +152,7 @@ export default function YourBusinesses() {
     "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/a35eb6b9-f638-4c19-b8d9-0d5c54558c5c.png";
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <style>{`
         @keyframes fadeUp { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
         .fade-in { animation: fadeUp .35s ease-out both; }
@@ -163,9 +164,9 @@ export default function YourBusinesses() {
         .tile:hover .shine:before{ opacity:1 }
 
         /* How it works - grid & cards */
-        .hiw-grid { display:grid; grid-template-columns: repeat(5, 1fr); gap: 24px; position:relative; }
+        .hiw-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; position:relative; }
         .hiw-card { position:relative; background:#fff; border-radius:16px; border:1px solid rgba(15,23,42,.06);
-                    box-shadow:0 12px 40px rgba(0,0,0,.08); min-height:260px; transition:transform .2s ease, box-shadow .2s ease; }
+                    box-shadow:0 12px 40px rgba(0,0,0,.08); min-height:240px; transition:transform .2s ease, box-shadow .2s ease; }
         .hiw-card:hover { transform: translateY(-4px); box-shadow:0 28px 60px rgba(0,0,0,.12); }
         .icon-glow { filter: drop-shadow(0 8px 30px rgba(37,99,235,.18)); }
 
@@ -173,9 +174,13 @@ export default function YourBusinesses() {
         .hiw-card.with-arrow::after { content:""; position:absolute; top:50%; right:-22px; width:28px; border-top:2px dashed rgba(15,23,42,.2); transform:translateY(-50%); }
         .hiw-card.with-arrow::before { content:""; position:absolute; top:50%; right:-22px; transform:translate(28px,-50%); border-left:8px solid rgba(15,23,42,.35); border-top:6px solid transparent; border-bottom:6px solid transparent; }
 
+        /* Hide arrows on small screens */
         @media (max-width: 1023px){
-          .hiw-grid { display:none; } /* use mobile scroller */
+          .hiw-card.with-arrow::after, .hiw-card.with-arrow::before { display:none; }
         }
+
+        /* Make sure images and absolute elements don't overflow */
+        .hero-img { object-fit:cover; width:100%; height:100%; left:0; }
       `}</style>
 
       {/* HERO */}
@@ -183,7 +188,7 @@ export default function YourBusinesses() {
         <img
           src={heroImg}
           alt="Business solutions cover"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full hero-img"
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2 z-20 w-full max-w-3xl px-4">
@@ -197,7 +202,7 @@ export default function YourBusinesses() {
       </section>
 
       {/* INDUSTRIES */}
-      <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-40 pb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-6 pt-32 md:pt-52 pb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-center mb-8">
           Industries <span style={{ color: BRAND }}>We Power</span>
         </h2>
@@ -271,7 +276,9 @@ export default function YourBusinesses() {
                   <p className="mt-4 text-slate-800 leading-7">{it.body}</p>
 
                   <Link
-                  to="/contact" className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-4 py-2 text-sm hover:bg-slate-800 transition">
+                    to="/contact"
+                    className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-4 py-2 text-sm hover:bg-slate-800 transition"
+                  >
                     Get started <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -282,12 +289,12 @@ export default function YourBusinesses() {
       </div>
 
       {/* OUR EXPERTISE */}
-      <section className="max-w-6xl mx-auto px-6 pt-6 md:pt-10 pb-16">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-6 pt-6 md:pt-10 pb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-center mb-8">
           Our <span style={{ color: BRAND }}>Expertise</span>
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-12 place-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-12 place-items-center px-2">
           {expertise.map((item, i) => (
             <div
               key={i}
@@ -313,74 +320,74 @@ export default function YourBusinesses() {
       </section>
 
       {/* HOW IT WORKS */}
-<section className="max-w-6xl mx-auto px-6 pt-2 pb-20">
-  <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
-    How <span style={{ color: BRAND }}>it works</span>
-  </h2>
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-6 pt-2 pb-20">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
+          How <span style={{ color: BRAND }}>it works</span>
+        </h2>
 
-  {/* Responsive */}
-  <div className="hiw-grid">
-    {howItWorks.map((s, i) => (
-      <div
-        key={i}
-        className={`hiw-card ${
-          i < howItWorks.length - 1 ? "with-arrow" : ""
-        }`}
-      >
-        <div className="p-6 lg:p-8 text-center h-full flex flex-col justify-center">
-          <div
-            className="mx-auto mb-5 flex items-center justify-center w-16 h-16 rounded-2xl icon-glow"
-            style={{
-              background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`,
-              color: s.color,
-            }}
-          >
-            {s.icon}
-          </div>
-          <p className="text-lg font-extrabold text-slate-900 whitespace-pre-line leading-snug">
-            {s.title}
-          </p>
-        </div>
-      </div>
-    ))}
-  </div>
-
-  {/* Mobile: cards */}
-  <div className="md:hidden overflow-x-auto mt-4 [-webkit-overflow-scrolling:touch]">
-    <div className="flex items-stretch gap-4 pr-2">
-      {howItWorks.map((s, i) => (
-        <div key={`m-${i}`} className="min-w-[80%]">
-          <div className="hiw-card">
-            <div className="p-6 text-center flex flex-col justify-center">
-              <div
-                className="mx-auto mb-4 flex items-center justify-center w-14 h-14 rounded-2xl icon-glow"
-                style={{
-                  background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`,
-                  color: s.color,
-                }}
-              >
-                {s.icon}
+        {/* Desktop / tablet: responsive grid (auto-fit) */}
+        <div className="hiw-grid">
+          {howItWorks.map((s, i) => (
+            <div
+              key={i}
+              className={`hiw-card ${
+                i < howItWorks.length - 1 ? "with-arrow" : ""
+              }`}
+            >
+              <div className="p-6 lg:p-8 text-center h-full flex flex-col justify-center">
+                <div
+                  className="mx-auto mb-5 flex items-center justify-center w-16 h-16 rounded-2xl icon-glow"
+                  style={{
+                    background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`,
+                    color: s.color,
+                  }}
+                >
+                  {s.icon}
+                </div>
+                <p className="text-lg font-extrabold text-slate-900 whitespace-pre-line leading-snug">
+                  {s.title}
+                </p>
               </div>
-              <p className="text-base font-extrabold text-slate-900 whitespace-pre-line leading-snug">
-                {s.title}
-              </p>
             </div>
+          ))}
+        </div>
+
+        {/* Mobile: cards (shown on small screens) */}
+        <div className="md:hidden overflow-x-auto mt-4 touch-pan-x">
+          <div className="flex items-stretch gap-4 pr-2">
+            {howItWorks.map((s, i) => (
+              <div key={`m-${i}`} className="min-w-[80%]">
+                <div className="hiw-card">
+                  <div className="p-6 text-center flex flex-col justify-center">
+                    <div
+                      className="mx-auto mb-4 flex items-center justify-center w-14 h-14 rounded-2xl icon-glow"
+                      style={{
+                        background: `radial-gradient(60px 60px at 50% 50%, ${s.color}22, transparent 60%)`,
+                        color: s.color,
+                      }}
+                    >
+                      {s.icon}
+                    </div>
+                    <p className="text-base font-extrabold text-slate-900 whitespace-pre-line leading-snug">
+                      {s.title}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-{/* SVG Image */}
-<div className="mt-8 -mx-6 px-10 sm:px-6 md:px-8">
-  <img
-    src={ProcessImage}
-    alt="Process diagram"
-    className="w-full h-auto"
-    style={{ minHeight: '200px', maxWidth: '1000px', margin: '0 auto' }}
-  />
-</div>
+      {/* SVG Image */}
+      <div className="mt-8 px-4 sm:px-6 md:px-8">
+        <img
+          src={ProcessImage}
+          alt="Process diagram"
+          className="w-full h-auto max-w-full mx-auto"
+          style={{ minHeight: "200px", maxWidth: "1000px", margin: "0 auto" }}
+        />
+      </div>
 
       <ContactSection />
     </div>

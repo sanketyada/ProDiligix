@@ -6,6 +6,11 @@ const countries = [
   { code: "+91", emoji: "🇮🇳", name: "India" },
   { code: "+1", emoji: "🇺🇸", name: "USA" },
   { code: "+44", emoji: "🇬🇧", name: "UK" },
+  { code: "+971", emoji: "🇦🇪", name: "United Arab Emirates" },
+  { code: "+7", emoji: "🇷🇺", name: "Russia" },
+  { code: "+977", emoji: "🇳🇵", name: "Nepal" },
+  { code: "+975", emoji: "🇧🇹", name: "Bhutan" },
+  { code: "+966", emoji: "🇸🇦", name: "Saudi Arabia" },
 ];
 
 export default function ContactSection() {
@@ -127,7 +132,18 @@ export default function ContactSection() {
             Get In Touch With Us
           </h2>
 
-          {/* Industry */}
+          {/* Company Name* */}
+          <input
+            type="text"
+            name="company"
+            placeholder="Company Name*"
+            value={formData.company}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500"
+            required
+          />
+
+          {/* Select Industry Solutions* */}
           <select
             name="industry"
             value={formData.industry}
@@ -136,36 +152,11 @@ export default function ContactSection() {
             required
           >
             <option value="">Select Industry Solutions*</option>
-            <option
-              value="IT Industry
-"
-            >
-              IT Industry
-            </option>
-            <option
-              value="Manufacturing 
-"
-            >
-              Manufacturing
-            </option>
-            <option
-              value="eCommerce
-"
-            >
-              eCommerce
-            </option>
-            <option
-              value="FMCG
-"
-            >
-              FMCG
-            </option>
-            <option
-              value="Service Sector
-"
-            >
-              Service Sectore
-            </option>
+            <option value="IT Industry">IT Industry</option>
+            <option value="Manufacturing">Manufacturing</option>
+            <option value="eCommerce">eCommerce</option>
+            <option value="FMCG">FMCG</option>
+            <option value="Service Sector">Service Sector</option>
             <option value="other">Other</option>
           </select>
 
@@ -181,33 +172,22 @@ export default function ContactSection() {
             />
           )}
 
-          {/* Name */}
+          {/* Your Name* */}
           <input
             type="text"
             name="name"
-            placeholder="Name*"
+            placeholder="Your Name*"
             value={formData.name}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500"
             required
           />
 
-          {/* Company */}
-          <input
-            type="text"
-            name="company"
-            placeholder="Company*"
-            value={formData.company}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500"
-            required
-          />
-
-          {/* Email */}
+          {/* Work Email* */}
           <input
             type="email"
             name="email"
-            placeholder="Email*"
+            placeholder="Work Email*"
             value={formData.email}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500"
