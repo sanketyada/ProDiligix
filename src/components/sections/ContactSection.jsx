@@ -15,6 +15,7 @@ const countries = [
 
 export default function ContactSection() {
   const form = useRef();
+  const [toast, setToast] = useState(null);
 
   const [formData, setFormData] = useState({
     industry: "",
@@ -53,7 +54,15 @@ export default function ContactSection() {
       .then(
         () => {
           console.log("SUCCESS!");
-          alert("Email Sent Successfully!");
+
+          setToast({
+            type: "success",
+            message: "Email Sent Successfully!",
+          });
+
+          // Auto-hide toast after 3 seconds
+          setTimeout(() => setToast(null), 3000);
+
           setFormData({
             industry: "",
             otherIndustry: "",
@@ -67,7 +76,14 @@ export default function ContactSection() {
         },
         (error) => {
           console.log("FAILED...", error.text);
-          alert("Email Failed! Try Again.");
+
+          setToast({
+            type: "error",
+            message: "Email Failed! Try Again.",
+          });
+
+          // Auto-hide toast after 3 seconds
+          setTimeout(() => setToast(null), 3000);
         }
       );
   };
@@ -241,6 +257,15 @@ export default function ContactSection() {
           </button>
         </form>
       </div>
+      {toast && (
+        <div
+          className={`fixed bottom-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white
+      ${toast.type === "success" ? "bg-green-600" : "bg-red-600"}
+      animate-slide-up`}
+        >
+          {toast.message}
+        </div>
+      )}
     </div>
   );
 }

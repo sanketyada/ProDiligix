@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import mapImg from "../assets/images/map.png";
 import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 const countries = [
   { code: "+91", emoji: "🇮🇳", name: "India" },
@@ -15,6 +16,8 @@ const countries = [
 
 const GetStartedForm = () => {
   const [visible, setVisible] = useState(false);
+  const [toast, setToast] = useState(null);
+
   const navigate = useNavigate();
 
   // Form data
@@ -39,7 +42,7 @@ const GetStartedForm = () => {
   };
 
   // handle form submit
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const payload = {
@@ -52,13 +55,45 @@ const GetStartedForm = () => {
 
     console.log("Data ready to send:", payload);
 
-    try {
-      const res = await fetch("/api/pincode/276201");
-      const result = await res.json();
-      navigate("/", { state: { result } });
-    } catch (err) {
-      console.error("submit error", err);
-    }
+    emailjs
+      .send("service_8blplvv", "template_bgwjwn8", payload, {
+        publicKey: "aVAj7LjvESyZtrZ42",
+      })
+      .then(
+        () => {
+          console.log("Email sent!");
+
+          // Tailwind toast
+          setToast({
+            type: "success",
+            message: "Email sent successfully!",
+          });
+          setTimeout(() => setToast(null), 3000);
+
+          
+          setFormData({
+            companyName: "",
+            industry: "",
+            otherIndustry: "",
+            fullName: "",
+            email: "",
+            countryCode: "",
+            phone: "",
+          });
+
+          // Redirect
+          navigate("/", { state: { status: "success" } });
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+
+          setToast({
+            type: "error",
+            message: "Failed to send email!",
+          });
+          setTimeout(() => setToast(null), 3000);
+        }
+      );
   };
 
   return (
@@ -301,7 +336,9 @@ const GetStartedForm = () => {
 
       <div className="get-started-form-wrapper">
         <div
-          className={`get-started-form animated-fade-in${visible ? " active" : ""}`}
+          className={`get-started-form animated-fade-in${
+            visible ? " active" : ""
+          }`}
         >
           <div className="gs-info">
             <img src={mapImg} alt="World map" className="gs-map" />
@@ -416,6 +453,15 @@ const GetStartedForm = () => {
             </div>
           </form>
         </div>
+        {toast && (
+          <div
+            className={`fixed bottom-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white
+      ${toast.type === "success" ? "bg-green-600" : "bg-red-600"}
+      animate-slide-up`}
+          >
+            {toast.message}
+          </div>
+        )}
       </div>
     </>
   );
